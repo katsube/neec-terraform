@@ -17,10 +17,12 @@ variable "public_key" { }
 // EC2
 variable "name" { }
 variable "ami" {
-    default = "ami-0548e5d1cef315c7f"  // AmazonLinux2 ARM 64bit
+    default = "ami-027a31eff54f1fe4c"  // AmazonLinux2 ARM 64bit
 }
 variable "instance_type" {
-    default = "t4g.micro"
+    default = "t2.micro"    // t2.micro(無料,CPU1,1G)
+                            // t2.small($0.0304,CPU1,2G)
+                            // t2.medium($0.1608,CPU2,4G)
 }
 
 //---------------------------------------------------------
@@ -81,7 +83,7 @@ resource "aws_instance" "webserver" {
 // Elastic IP
 //---------------------------------------------------------
 resource "aws_eip" "webserver" {
-    vpc = true
+    //vpc = true
     instance = aws_instance.webserver.id
     tags = {
         Name = "neec"
