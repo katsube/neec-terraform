@@ -64,7 +64,7 @@ resource "aws_internet_gateway" "neec" {
 //---------------------------
 // Elastic IP
 resource "aws_eip" "nat_1a" {
-	vpc = true
+	//vpc = true
 }
 // NAT Gateway
 resource "aws_nat_gateway" "nat_1a" {
