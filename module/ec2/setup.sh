@@ -22,12 +22,12 @@ source /etc/locale.conf
 sed -i 's/LANG="en_US.UTF-8"/LANG="ja_JP.UTF-8"/g' /etc/sysconfig/i18n
 
 # スワップ領域を作成
-mkdir /var/swap/
-dd if=/dev/zero of=/var/swap/swap0 bs=1M count=1024
-chmod 600 /var/swap/swap0
-mkswap /var/swap/swap0
-swapon /var/swap/swap0
-echo "/var/swap/swap0 swap swap defaults 0 0" >> /etc/fstab
+# mkdir /var/swap/
+# dd if=/dev/zero of=/var/swap/swap0 bs=1M count=1024
+# chmod 600 /var/swap/swap0
+# mkswap /var/swap/swap0
+# swapon /var/swap/swap0
+# echo "/var/swap/swap0 swap swap defaults 0 0" >> /etc/fstab
 
 # yum-cron
 yum install -y yum-cron

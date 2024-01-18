@@ -8,7 +8,7 @@
 locals {
     // サーバログイン用
     ssh_keyname = "webserver"
-    ssh_pubkey = file("~/.ssh/myaws.pub")
+    ssh_pubkey = file("~/.ssh/katsube-aws.pub")
 }
 
 //---------------------------------------------------------
@@ -64,7 +64,7 @@ resource "aws_internet_gateway" "neec" {
 //---------------------------
 // Elastic IP
 resource "aws_eip" "nat_1a" {
-	vpc = true
+	//vpc = true
 }
 // NAT Gateway
 resource "aws_nat_gateway" "nat_1a" {
