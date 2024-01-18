@@ -8,7 +8,7 @@
 locals {
     // サーバログイン用
     ssh_keyname = "webserver"
-    ssh_pubkey = file("~/.ssh/myaws.pub")
+    ssh_pubkey = file("~/.ssh/katsube-aws.pub")
 }
 
 //---------------------------------------------------------
